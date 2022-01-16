@@ -2,17 +2,21 @@ import React from 'react';
 
 const Tabs = (props) => {
 
+    ///// deconstruct tabs props as tabs \\\\\
     const {tabs} = props;
 
-    console.log(props.currentMessage)
+    // console.log(props.currentMessage)
 
-    const onClickHandler = (e, value) => {
-        // alert("passing index: "+value);
-        console.log("Returning: " + value)
-        props.currentMessage(parseInt(value));
-        console.log("Returning: " + value +" Successful")
+    ///// upon clicking a tab, returns the index of the tab object \\\\\
+    const onClickHandler = (e, idx) => {
+        // alert("passing index: "+idx);
+        // console.log("Returning: " + idx)
+        props.currentMessage(parseInt(idx));
+        // console.log("Returning: " + idx +" Successful")
     }
 
+    ///// iterates over the tabs array and returns a button to display for each tab \\\\\
+    ///// when clicked, button returns the index of the tab object to the onClickHandler \\\\\
     return (
         <div className="d-inline-flex flex-wrap mt-5">
 
