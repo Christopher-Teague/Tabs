@@ -4,11 +4,13 @@ const Tabs = (props) => {
 
     const {tabs} = props;
 
-    console.log(props)
+    console.log(props.currentMessage)
 
     const onClickHandler = (e, value) => {
-        alert("passing index: "+value);
-        // setMsg(value);
+        // alert("passing index: "+value);
+        console.log("Returning: " + value)
+        props.currentMessage(parseInt(value));
+        console.log("Returning: " + value +" Successful")
     }
 
     return (
@@ -16,7 +18,7 @@ const Tabs = (props) => {
 
             {
                 tabs.map((tab, idx) => {
-                    return <button key={idx} className="btn btn-lg btn-outline-dark"
+                    return <button key={idx} className="m-2 btn btn-lg btn-outline-success"
                     onClick={ (e) => onClickHandler(e, idx) }>{tab.name}</button>
 
                 })

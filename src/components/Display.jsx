@@ -1,13 +1,16 @@
 import React from "react";
 
 const Display = (props) => {
-console.log(props)
+    console.log("**** props.message ***** " + props.message)
 
-    const { msg } = props;
-// console.log(msg.message)
+    ///// Not Working \\\\\
+    //     const { msg } = props;
+    // console.log(msg)
+
     return (
-        <div>
-           {/* <h1>{msg}</h1> */}
+        <div className="mt-5">
+            {/* {JSON.stringify(props.message)} */}
+            <h3>{props.message}</h3>
         </div>
     )
 }
